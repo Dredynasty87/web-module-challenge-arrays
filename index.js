@@ -89,8 +89,10 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
- /*your code here*/
+function addFlavor(arr, str){
+ let arrCopy = [...arr];
+ arrCopy.unshift(str);
+ return arrCopy;
 }
 
 
@@ -105,10 +107,11 @@ Use the removeLastFlavor function below to do the following:
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(arr){
+ let arrCopy = [...arr];
+ arrCopy.pop();
+ return arrCopy;
 }
-
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -122,8 +125,19 @@ Use the getFlavorByIndex function below to do the following:
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(arr, num){
+  let flavorString; //declare your variable 
+  for (let i = 0; i < arr.length; i++){
+    //look for the index === num then set flavorString === to what is at that index
+    if (i === num) {
+      flavorString = arr[i]
+    }
+  } //end of for loop
+  //return the variable below
+  return flavorString;
+  //short way is to just return whatever is at the given index in return statement
+  // return arr[num]
+  
 }
 
 
@@ -142,8 +156,16 @@ Use the removeFlavorByName function below to do the following:
   HINT: You can use .splice() for this
 */
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(arr, str){
+  //declare a variable below that is equal to a copy of our array
+  let arrayCopy = [...arr]; //spread operator ... will spread in our array 
+  for (let i = 0; i < arrayCopy.length; i++){
+    //write an if statement that checks if the given string is equal to what is at the index of the given array
+    if (arrayCopy[i] === str){
+      arrayCopy.splice(i,1); //enter in the index variable and the delete count into the splice
+    }
+  }
+  return arrayCopy; //return the augmented array
 }
 
 
