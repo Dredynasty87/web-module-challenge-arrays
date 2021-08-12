@@ -46,11 +46,13 @@ Use the copy function below to do the following:
 */
 
 function copy(passedInArray){
-  let arrayCopy= [...passedInArray];
+  let arrayCopy = [];
+
+  for (let i = 0; i < passedInArray.length; i++) {
+    arrayCopy[i] = passedInArray[i];
+  }
   return arrayCopy;
 }    
-
-
 
 
 
@@ -65,8 +67,13 @@ For Example: is31Flavors(originalFlavors) will return true if your code is worki
 */
 
 
-function is31Flavors(/*your code here*/){
- /*your code here*/
+function is31Flavors(passedInArray){
+ let arrLength = passedInArray.length;
+ if(arrLength === 31){
+   return true;
+ }else {
+   return false
+ }
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
